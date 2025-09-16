@@ -12,7 +12,7 @@ Risky Hash wasn't properly tested for attack resistance and shouldn't be used wi
 
 Risky Hash was tested with [`SMHasher`](https://github.com/rurban/smhasher) ([see results](#smhasher-results)) (passed).
 
-A non-streaming [reference implementation in C is attached](#in-code) The code is easy to read and should be considered an integral part of this specification.
+A non-streaming [reference implementation in C is attached](#in-code). The code is easy to read and should be considered an integral part of this specification.
 
 ## Status
 
@@ -26,7 +26,7 @@ This is the second draft of the RiskyHash algorithm and it incorporates updates 
 
     Following this feedback, the error in the code was fixed, the initialization state was updated and the left-over bytes are now read in order with padding (rather than consumed by the 4th state-word).
 
-* Chris Anderson (@injinj) did amazing work exploring a 128 bit variation and attacking RiskyHash using a variation on a Meet-In-The-Middle attack, written by Hening Makholm (@hmakholm), that discovers hash collisions with a small Hamming distance ([SMHasher fork](https://github.com/hmakholm/smhasher)).
+* Chris Anderson (@injinj) did amazing work exploring a 128 bit variation and attacking RiskyHash using a variation on a Meet-In-The-Middle attack, written by Henning Makholm (@hmakholm), that discovers hash collisions with a small Hamming distance ([SMHasher fork](https://github.com/hmakholm/smhasher)).
 
     Following this input, RiskyHash updated the way the message length is incorporated into the final hash and updated the consumption stage to replace the initial XOR with ADD.
 
