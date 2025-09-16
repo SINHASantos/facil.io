@@ -4,7 +4,7 @@ sidebar: 0.7.x/_sidebar.md
 ---
 # {{{title}}}
 
-facil.io includes an HTTP/1.1 and WebSocket server / framework that could be used to author HTTP and WebSocket services, including REST applications, micro-services, etc'.
+facil.io includes an HTTP/1.1 and WebSocket server / framework that could be used to author HTTP and WebSocket services, including REST applications, micro-services, etc.
 
 Note that, currently, only HTTP/1.1 is supported. Support for HTTP/2 is planned for future versions and could be implemented as a custom protocol until such time.
 
@@ -45,7 +45,7 @@ In addition to the `port` and `address` argument (explained in [`fio_listen`](fi
         // callback example:
         void on_request(http_s *request);
 
-* `on_request`:
+* `on_upgrade`:
 
     Callback for Upgrade and EventSource (SSE) requests.
 
@@ -54,7 +54,7 @@ In addition to the `port` and `address` argument (explained in [`fio_listen`](fi
         // callback example:
         void on_upgrade(http_s *request, char *requested_protocol, size_t len);
 
-* `on_request`:
+* `on_response`:
 
     This callback is ignored for HTTP server mode and is only called when a response (not a request) is received. On server connections, this would normally indicate a protocol error.
 
@@ -245,7 +245,7 @@ typedef struct {
 } http_s;
 ```
 
-The `http_s` data in NOT thread safe and can only be accessed safely from within the HTTP callbacks (`on_request`, `on_response` and the `http_defer` callback)
+The `http_s` data is NOT thread safe and can only be accessed safely from within the HTTP callbacks (`on_request`, `on_response` and the `http_defer` callback)
 
 ### HTTP Handle Data Access
 
@@ -514,7 +514,7 @@ In addition to the handle argument (`http_s *`), the following arguments are sup
         // type:
        unsigned secure : 1;
 
-* `path_len`:
+* `http_only`:
 
      Limit cookie to HTTP (intended to prevent JavaScript access/hijacking).
 

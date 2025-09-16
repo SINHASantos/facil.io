@@ -134,7 +134,7 @@ remember to `fiobj_free` the old object.
 int64_t fiobj_ary_find(FIOBJ ary, FIOBJ data);
 ```
 
-Finds the index of a specifide object (if any). Returns -1 if the object
+Finds the index of a specified object (if any). Returns -1 if the object
 isn't found.
 
 #### `fiobj_ary_remove`

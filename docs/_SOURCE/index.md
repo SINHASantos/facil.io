@@ -29,7 +29,7 @@ I used this library (including the HTTP server) on Linux, Mac OS X and FreeBSD (
 ```c
 #include "http.h" /* the HTTP facil.io extension */
 
-// We'll use this callback in `http_listen`, to handles HTTP requests
+// We'll use this callback in `http_listen`, to handle HTTP requests
 void on_request(http_s *request);
 
 // These will contain pre-allocated values that we will use often

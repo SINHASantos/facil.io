@@ -176,7 +176,7 @@ typedef struct fio_str_info_s {
 The Sting in binary safe and might contain NUL bytes in the middle as well as
 a terminating NUL.
 
-If a a Number or a Float are passed to the function, they
+If a Number or a Float is passed to the function, they
 will be parsed as a *temporary*, thread-safe, String.
 
 Numbers will be represented in base 10 numerical data.
