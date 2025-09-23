@@ -137,7 +137,7 @@ Attaches (or updates) a protocol object to a file descriptor (fd).
 
 The new protocol object can be NULL, which will detach ("hijack") the socket.
 
-The `fd` can be one created outside of facil.io if it was set in to non-blocking mode (see [`fio_set_non_block`](#fio_set_non_block)).
+The `fd` can be one created outside of facil.io if it was set to non-blocking mode (see [`fio_set_non_block`](#fio_set_non_block)).
 
 The old protocol's `on_close` (if any) will be scheduled.
 
@@ -188,7 +188,7 @@ void fio_touch(intptr_t uuid);
 #### `fio_force_event`
 
 ```c
-void fio_force_event(intptr_t uuid, enum fio_io_event);
+void fio_force_event(intptr_t uuid, enum fio_io_event event);
 ```
 
 Schedules an IO event, even if it did not occur.
@@ -432,7 +432,7 @@ The following arguments are supported:
         // callback example:
         void on_connect(intptr_t uuid, void *udata);
 
-* `on_connect`:
+* `on_fail`:
 
     This callback will be called when a socket fails to connect. It's often a good place for cleanup.
 
@@ -764,7 +764,7 @@ void fio_close(intptr_t uuid);
 
 `fio_close` marks the connection for disconnection once all the data was sent. The actual disconnection will be managed by the [`fio_flush`](#fio_flush) function.
 
-[`fio_flash`](#fio_flash) will be automatically scheduled.
+[`fio_flush`](#fio_flush) will be automatically scheduled.
 
 #### `fio_force_close`
 
@@ -2407,7 +2407,7 @@ Takes a UTF-8 character selection information (UTF-8 position and length) and up
 
 If the String isn't UTF-8 valid up to the requested selection, than `pos` will be updated to `-1` otherwise values are always positive.
 
-The returned `len` value may be shorter than the original if there wasn't enough data left to accomodate the requested length. When a `len` value of `0` is returned, this means that `pos` marks the end of the String.
+The returned `len` value may be shorter than the original if there wasn't enough data left to accommodate the requested length. When a `len` value of `0` is returned, this means that `pos` marks the end of the String.
 
 Returns -1 on error and 0 on success.
 
@@ -3969,7 +3969,7 @@ A SHA-2 helper function that performs initialization, writing and finalizing.
 
 Uses the SHA2 256 variant.
 
-#### `fio_sha2_256`
+#### `fio_sha2_384`
 
 ```c
 inline char *fio_sha2_384(fio_sha2_s *s, const void *data,

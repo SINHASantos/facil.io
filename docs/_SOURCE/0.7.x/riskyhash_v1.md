@@ -12,7 +12,7 @@ Risky Hash wasn't properly tested for attack resistance and shouldn't be used wi
 
 Risky Hash was tested with [`SMHasher`](https://github.com/rurban/smhasher) ([see results](#smhasher-results)) (passed).
 
-A non-streaming [reference implementation in C is attached](#in-code) The code is easy to read and should be considered as the actual specification.
+A non-streaming [reference implementation in C is attached](#in-code). The code is easy to read and should be considered as the actual specification.
 
 ## Status
 
@@ -186,7 +186,7 @@ Risky Hash attempts to balance performance with security concerns, since hash fu
 
 However, the design should allow for fairly high performance, for example, by using SIMD instructions or a multi-threaded approach (up to 4 threads).
 
-In fact, even the simple reference implementation at the end of this document offers fairly high performance, averaging 17% faster than xxHash for short keys (up to 31 bytes) and 9% slower on long keys (262,144 bytes).
+In fact, even the simple reference implementation at the end of this document offers fairly high performance, averaging 17% faster than xxHash for short keys (up to 31 bytes) and 9% slower on long keys (262.144 bytes).
 
 ## Attacks, Reports and Security
 

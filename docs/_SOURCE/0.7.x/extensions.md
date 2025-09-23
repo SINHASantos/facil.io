@@ -10,7 +10,7 @@ However, there are many tasks that are common to applications that need an event
 
 These bundled extensions to the core library provide common functionality. They aren't required and can be safely deleted without effecting the core library.
 
-The following extensions come bundled along with facio.io:
+The following extensions come bundled along with facil.io:
 
 * The [TLS (`fio_tls`)](fio_tls) extension for adding SSL/TLS support (requires 3rd party libraries).
 
