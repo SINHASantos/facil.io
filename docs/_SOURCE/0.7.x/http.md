@@ -45,7 +45,7 @@ In addition to the `port` and `address` argument (explained in [`fio_listen`](fi
         // callback example:
         void on_request(http_s *request);
 
-* `on_request`:
+* `on_upgrade`:
 
     Callback for Upgrade and EventSource (SSE) requests.
 
@@ -54,7 +54,7 @@ In addition to the `port` and `address` argument (explained in [`fio_listen`](fi
         // callback example:
         void on_upgrade(http_s *request, char *requested_protocol, size_t len);
 
-* `on_request`:
+* `on_response`:
 
     This callback is ignored for HTTP server mode and is only called when a response (not a request) is received. On server connections, this would normally indicate a protocol error.
 
